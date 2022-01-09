@@ -1,6 +1,7 @@
-# faker.js - generate massive amounts of fake data in the browser and node.js
+# hoaxer.js - reupload of faker.js (generates fake data)
 
-![Faker.js](https://raw.githubusercontent.com/Unzor/hoaxer/main/OIP.jpg)
+![Faker.js](https://raw.githubusercontent.com/Unzor/hoaxer/main/OIP.jpg
+)
 
 [![Build Status](https://travis-ci.org/Marak/faker.js.svg?branch=master)](https://travis-ci.org/Marak/faker.js) [![Coverage Status](https://coveralls.io/repos/github/Marak/faker.js/badge.svg?branch=master)](https://coveralls.io/github/Marak/faker.js?branch=master)
 
@@ -10,24 +11,12 @@
 [![OpenCollective](https://opencollective.com/fakerjs/sponsors/badge.svg)](#sponsors)
 [![Gitter chat](https://badges.gitter.im/marak/faker.js.png)](https://gitter.im/Faker-js/community)
 
-## Demo
-
-[https://rawgit.com/Marak/faker.js/master/examples/browser/index.html](https://rawgit.com/Marak/faker.js/master/examples/browser/index.html)
-
-### Faker Cloud
-
-Don't have a local development setup ready? 
-
-Try our hosted version of Faker at [https://fakercloud.com/api](https://fakercloud.com/api)
-
-https://github.com/faker/faker-cloud
-
 ## Usage
 
 ### Browser
 
 ```html
-    <script src = "faker.js" type = "text/javascript"></script>
+    <script src = "hoaxer.js" type = "text/javascript"></script>
     <script>
       var randomName = faker.name.findName(); // Caitlyn Kerluke
       var randomEmail = faker.internet.email(); // Rusty@arne.info
@@ -38,18 +27,14 @@ https://github.com/faker/faker-cloud
 ### Node.js
 
 ```js
-    var faker = require('faker');
+    var hoaxer = require('hoaxer');
 
-    var randomName = faker.name.findName(); // Rowan Nikolaus
-    var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
-    var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+    var randomName = hoaxer.name.findName(); // Rowan Nikolaus
+    var randomEmail = hoaxer.internet.email(); // Kassandra.Haley@erich.biz
+    var randomCard = hoaxer.helpers.createCard(); // random contact card containing many properties
 ```
 
 ## API
-
-### JSDoc API Browser
-
-[http://marak.github.io/faker.js/](http://marak.github.io/faker.js/)
 
 ### API Methods
 
@@ -296,15 +281,15 @@ https://github.com/faker/faker-cloud
   * bicycle
 
 
-### Faker.fake()
+### hoaxer.fake()
 
-faker.js contains a super useful generator method `Faker.fake` for combining faker API methods using a mustache string format.
+faker.js/hoaxer.js contains a super useful generator method `hoaxer.fake` for combining faker/hoaxer API methods using a mustache string format.
 
 **Example:**
 
 
 ``` js
-console.log(faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+console.log(hoaxer.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
 // outputs: "Marks, Dean Sr."
 ```
 
@@ -313,7 +298,7 @@ This will interpolate the format string with the value of methods `name.lastName
 
 ## Localization
 
-As of version `v2.0.0` faker.js has support for multiple localities.
+faker.js/hoaxer.js has support for multiple localities.
 
 The default language locale is set to English.
 
@@ -321,7 +306,7 @@ Setting a new locale is simple:
 
 ```js
 // sets locale to de
-faker.locale = "de";
+hoaxer.locale = "de";
 ```
 
  * az
@@ -374,15 +359,15 @@ faker.locale = "de";
 
 ### Individual Localization Packages
 
-faker.js supports incremental loading of locales.
+faker.js/hoaxer.js supports incremental loading of locales.
 
-By default, requiring `faker` will include *all* locale data.
+By default, requiring `hoaxer` will include *all* locale data.
 
 In a production environment, you may only want to include the locale data for a specific set of locales.
 
 ```js
 // loads only de locale
-var faker = require('faker/locale/de');
+var hoaxer = require('hoaxer/locale/de');
 ```
 
 ## Setting a randomness seed
@@ -390,14 +375,14 @@ var faker = require('faker/locale/de');
 If you want consistent results, you can set your own seed:
 
 ```js
-faker.seed(123);
+hoaxer.seed(123);
 
-var firstRandom = faker.datatype.number();
+var firstRandom = hoaxer.datatype.number();
 
 // Setting the seed again resets the sequence.
-faker.seed(123);
+hoaxer.seed(123);
 
-var secondRandom = faker.datatype.number();
+var secondRandom = hoaxer.datatype.number();
 
 console.log(firstRandom === secondRandom);
 ```
@@ -441,12 +426,9 @@ npm run readme
 
 faker.js is a popular project used by many organizations and individuals in production settings. Major and Minor version releases are generally on a monthly schedule. Bugs fixes are addressed by severity and fixed as soon as possible.
 
-If you require the absolute latest version of `faker.js` the `master` branch @ <http://github.com/marak/faker.js/> should always be up to date and working.
+If you require the absolute latest version of `faker.js` the `master` branch @ <http://github.com/Unzor/hoaxer/> should always be up to date and working.
 
 ## Maintainer
-
-#### Marak Squires
-
 faker.js - Copyright (c) 2020
 Marak Squires
 www.marak.com
@@ -475,73 +457,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Backers
-
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/fakerjs#backer)]
-
-<a href="https://opencollective.com/fakerjs/backer/0/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/1/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/2/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/3/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/4/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/5/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/6/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/7/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/8/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/9/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/9/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/10/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/10/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/11/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/11/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/12/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/12/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/13/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/13/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/14/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/14/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/15/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/15/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/16/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/16/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/17/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/17/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/18/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/18/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/19/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/19/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/20/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/20/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/21/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/21/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/22/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/22/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/23/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/23/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/24/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/24/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/25/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/25/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/26/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/26/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/27/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/27/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/28/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/28/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/backer/29/website" target="_blank"><img src="https://opencollective.com/fakerjs/backer/29/avatar.svg"></a>
-
-## Sponsors
-
-Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/fakerjs#sponsor)]
-
-<a href="https://opencollective.com/fakerjs/sponsor/0/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/1/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/2/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/3/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/4/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/5/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/6/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/7/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/8/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/9/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/9/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/10/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/10/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/11/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/11/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/12/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/12/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/13/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/13/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/14/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/14/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/15/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/15/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/16/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/16/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/17/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/17/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/18/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/18/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/19/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/19/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/20/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/20/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/21/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/21/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/22/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/22/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/23/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/23/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/24/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/24/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/25/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/25/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/26/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/26/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/27/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/27/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/28/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/28/avatar.svg"></a>
-<a href="https://opencollective.com/fakerjs/sponsor/29/website" target="_blank"><img src="https://opencollective.com/fakerjs/sponsor/29/avatar.svg"></a>
